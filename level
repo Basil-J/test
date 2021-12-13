@@ -1,0 +1,164 @@
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int b,a,c,e;
+    char f,g[20];
+    start:
+    printf("Welcome to Treasure Hunt developed by Basil");
+    printf("\nHello adventurer, You are begining your quest for Markham's Magical treasure\nYou are near a old broken structure, there are two entrances. \nOne is a stone arch with light coming out of one side and the other is a dark cave like entrance");
+
+    printf("\nPick your entrance \n 1.Stone Arch \n 2.Dark Cave");
+    printf("\nEnter your choice(1,2) :",b);
+
+    scanf("%d",&b);
+    switch(b) {
+    case 1:
+    printf("The light was coming due to a crack in the structure,As soon as you step in the unstable structure ,it crashes on you ");
+    goto jump;
+   
+    break;
+    
+    case 2:
+    printf(" You turned your torch on , The cave seems to filled with ancient runes, You have a feeling that this is the right path");
+    goto cont;
+    break;
+    }
+    jump:
+    printf("\nYOUR CHARACTER IS DEAD");
+    goto Stop;
+    cont:
+    printf("\n As you progress through the ancient Runes, you find some useful tools but you can only carry one \n Which Tool are you going to pick");
+    printf("\n1.Wooden Plank \n2.Sword \n3.Axe \n4.dagger");
+    printf("\nPick your Tool(1,2,3,4):");
+    scanf("%d",&c);
+    switch(c) {
+        case 1:
+        printf("You picked Wooden plank");
+         printf("\nAs you entered a room at the end of the path,the door closed trapping you inside it.\nYou found there were three doors out of the room");
+        printf("\n1.A broken door with some kind of liquid damage\n2.Artistic door with serpent engravings on it\n3.Normal wooden door");
+        printf("\nWhich door are you going to open(1,2,3):");
+        scanf("%d",&e);
+        switch(e) {
+            case 1:
+            printf("\nAs soon as you entered, the entrance vanished.You can see the exit at the other side of the room but you have to cross a pool of posionous liquid. You used your plank to get across the pool");
+            goto next;
+            break;
+            case 2:
+            printf("\nAs soon as you entered, the entrance vanished.The room was filled with poisonous snakes. You tried to fight them of with your wooden plank but it proved to be useless");
+            goto gameover;
+            break;
+            case 3:
+            printf("\nAs soon as you entered, the entrance vanished. The path forward was blocked by panel of wooden planks. Unfortunately your Tool didnt meet expectations");
+            goto gameover;
+            break;
+        }
+        break;
+        
+        
+        
+        
+        case 2:
+        printf("You picked Sword");
+        printf("\nAs you entered a room at the end of the path,the door closed trapping you inside it.\nYou found there were three doors out of the room");
+        printf("\n1.A broken door with some kind of liquid damage\n2.Artistic door with serpent engravings on it\n3.Normal wooden door");
+        printf("\nWhich door are you going to open(1,2,3):");
+        scanf("%d",&e);
+        switch(e) {
+            case 1:
+            printf("\nAs soon as you entered, the entrance vanished.You can see the exit at the other side of the room but you have to cross a pool of posionous liquid");
+            goto gameover;
+            break;
+            case 2:
+            printf("\nAs soon as you entered, the entrance vanished.The room was filled with poisonous snakes. You used your sword to get across the room by fighting off the snakes");
+            goto next;
+            break;
+            case 3:
+            printf("As soon as you entered, the entrance vanished. The path forward was blocked by panel of wooden planks. unfortunately your sword didnt cut through them");
+            goto gameover;
+            break;
+        }
+        break;
+        
+        
+        case 3:
+        printf("You picked axe");
+         printf("\nAs you entered a room at the end of the path,the door closed trapping you inside it.\nYou found there were three doors out of the room");
+        printf("\n1.A broken door with some kind of liquid damage\n2.Artistic door with serpent engravings on it\n3.Normal wooden door");
+        printf("\nWhich door are you going to open(1,2,3):");
+        scanf("%d",&e);
+        switch(e) {
+            case 1:
+            printf("\nAs soon as you entered, the entrance vanished.You can see the exit at the other side of the room but you have to cross a pool of posionous liquid");
+            goto gameover;
+            break;
+            case 2:
+            printf("\nAs soon as you entered, the entrance vanished.The room was filled with poisonous snakes. Your Axe proved to be inefficent against the horde of snakes");
+            goto gameover;
+            break;
+            case 3:
+            printf("As soon as you entered, the entrance vanished. The path forward was blocked by panel of wooden planks.You used your axe to cut through the planks");
+            goto next;
+            break;
+        }
+        break;
+        
+        case 4:
+        printf("You picked dagger");
+         printf("\nAs you entered a room at the end of the path,the door closed trapping you inside it.\nYou found there were three doors out of the room");
+        printf("\n1.A broken door with some kind of liquid damage\n2.Artistic door with serpent engravings on it\n3.Normal wooden door");
+        printf("\nWhich door are you going to open(1,2,3):");
+        scanf("%d",&e);
+        switch(e) {
+            case 1:
+            printf("\nAs soon as you entered, the entrance vanished.You can see the exit at the other side of the room but you have to cross a pool of posionous liquid");
+            goto gameover;
+            break;
+            case 2:
+            printf("\nAs soon as you entered, the entrance vanished.The room was filled with poisonous snakes. Your Dagger was absolutely useless");
+            goto gameover;
+            break;
+            case 3:
+            printf("As soon as you entered, the entrance vanished. The path forward was blocked by panel of wooden planks. unfortunately your dagger didnt cut through them");
+            goto gameover;
+            break;
+        }
+        break;
+        
+        
+    }
+    
+    
+    
+    Stop:
+    printf("\nDo you want to try again(y,n):");
+    scanf("%c",&f);
+    if(f=='y'){
+        goto start;
+    }
+   
+    gameover:
+    printf("\nGAME OVER. You dont have the required tool to get across");
+    goto Stop;
+    
+    
+     next:
+    printf("You escaped the room");
+    printf("\nYou reached a large gate with ancient engravings gaurded by a sphynx");
+    printf("\n'You shall pass only if you say the right answer , if you dont instant death awaites'said the sphinx");
+    printf("\n'A spirited jig it dances bright,\nBanishing all but darkest night.\nGive it food and it will live;\nGive it water and it will die.\nWhat is it?'\nYour Answer(all small letter):");
+    scanf("%c",&g);
+    
+    if(strcmp(g,'fire')==0){
+        goto nextlevel;
+    }
+    else
+    {
+        goto jump;
+    }
+    nextlevel:
+    printf("CONGRATULATION YOU PASSED LEVEL ONE.\nThank you for playing for levels comming soon........");
+    
+    return 0;
+}
